@@ -1,10 +1,10 @@
 import json
 import os
 
-#File used to store contacts
+#json file to store contacts
 CONTACTS_FILE = "contacts.json"
 
-# Load contacts from the file
+# func to load contacts from the file
 def load_contacts():
   if os.path.exists(CONTACTS_FILE):
     with open(CONTACTS_FILE, "r") as file:
@@ -18,7 +18,7 @@ def save_contacts(contacts):
     json.dump(contacts, file, indent=4)
 
 
-# Add a new contact
+# Function to add new contact
 def add_contact(contacts):
   name = input("Enter contact name: ")
   phone = input("Enter phone number: ")
@@ -30,7 +30,7 @@ def add_contact(contacts):
   print(f"Contact '{name}' added succesfully")
 
 
-# View all contacts
+# fuction to display all contacts
 def view_contacts(contacts):
   if not contacts:
     print("No contacts found.")
@@ -43,7 +43,7 @@ def view_contacts(contacts):
       print("-"*20)
 
 
-# Edit an existing contact
+# func to edit 
 def edit_contact(contacts):
   name = input("Enter the name of the contact to edit: ")
 
@@ -62,7 +62,7 @@ def edit_contact(contacts):
     print(f"Contact '{name}' not found")
 
 
-# Delete a contact
+# func to delete contact
 def delete_contact(contacts):
   name = input("Enter the name of the contact to delete: ")
 
@@ -105,7 +105,7 @@ def main():
       print("Invalid choice. Please try again")
 
 
-# Run the program
+
 if __name__ == "__main__":
   main()
 
